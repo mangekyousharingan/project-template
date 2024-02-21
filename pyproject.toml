@@ -9,6 +9,7 @@ packages = []
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "0.104.1"
+uvicorn = "0.27.1"
 
 
 [tool.poetry.group.dev.dependencies]
