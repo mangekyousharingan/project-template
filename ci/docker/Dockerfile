@@ -9,12 +9,12 @@ ENV POETRY_NO_INTERACTION=1 \
 
 WORKDIR /app
 
-COPY pyproject.toml poetry.lock ./
+COPY ../../pyproject.toml ../../poetry.lock ./
 
 RUN poetry install --without dev && rm -rf $POETRY_CACHE_DIR
 
-COPY src/ ./
+COPY ../../src  /app/src
 
 RUN poetry install --without dev
 
-ENTRYPOINT ["python", "-m", "src"]
+ENTRYPOINT ["poetry", "run", "python", "-m", "src"]
