@@ -1,26 +1,32 @@
 [tool.poetry]
 name = "project-template"
 version = "0.1.0"
-description = "Basic Python FastAPi project structure for development."
-authors = ["Sebastian Wdowiarz"]
+description = "Template to quickly launch a new project."
+authors = ["Sebastian Wdowiarz <wdowiarzsebastian@gmail.com>"]
+license = "MIT"
 readme = "README.md"
-packages = []
 
 [tool.poetry.dependencies]
-python = "^3.11"
-fastapi = "0.104.1"
-uvicorn = "0.27.1"
-pyyaml = "^6.0.1"
+python = "3.12.4"
+fastapi = "^0.115.6"
+uvicorn = "^0.34.0"
 
 
 [tool.poetry.group.dev.dependencies]
-pre-commit-hooks = "4.5.0"
-pre-commit = "3.5.0"
-
-[tool.black]
-line-length = 110
-target-version = ['py39']
+black = "^24.10.0"
+mypy = "^1.14.1"
+isort = "^5.13.2"
+pre-commit = "^4.1.0"
+flake8 = "^7.1.1"
+bandit = "^1.8.2"
+pyupgrade = "^3.19.1"
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 110
+target-version = ['py311']

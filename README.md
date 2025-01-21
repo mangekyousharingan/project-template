@@ -1,2 +1,4 @@
-# project-template
-Python FastAPI project template
+# Python FastAPI project template
+
+### Template to quickly launch a new project. 
+
