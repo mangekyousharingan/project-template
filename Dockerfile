@@ -18,7 +18,7 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry config virtualenvs.create false
 
 # Install dependencies
-RUN poetry install --no-dev
+RUN poetry install --only main --no-root
 
 # Copy application code
 COPY . .
@@ -32,9 +32,6 @@ ENV PYTHONUNBUFFERED=1
 
 # Make entrypoint executable
 RUN chmod +x /app/entrypoint.sh
-
-# Expose port (default)
-EXPOSE 8000
 
 # Set entrypoint
 ENTRYPOINT ["/app/entrypoint.sh"]
