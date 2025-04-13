@@ -13,12 +13,12 @@ class HealthResponse(BaseModel):
 
 
 @router.get("", response_model=HealthResponse)
-async def health_check():
+async def health_check() -> HealthResponse:
     """
     Health check endpoint to verify the API is running.
     """
-    return {
-        "status": "healthy",
-        "timestamp": datetime.utcnow(),
-        "version": "0.1.0",
-    } 
+    return HealthResponse(
+        status="healthy",
+        timestamp=datetime.utcnow(),
+        version="0.1.0",
+    )
