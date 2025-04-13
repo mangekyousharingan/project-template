@@ -95,4 +95,3 @@ poetry run isort .
 ## License
 
 MIT
-

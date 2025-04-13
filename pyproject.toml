@@ -35,4 +35,22 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 110
-target-version = ['py311']
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 110
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+force_sort_within_sections = true
+
+[tool.flake8]
+max-line-length = 110
+extend-ignore = ["E203"]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B101"]
